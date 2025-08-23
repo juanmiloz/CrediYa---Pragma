@@ -1,0 +1,7 @@
+[submodule "auth-service"]
+	path = auth-service
+	url = https://github.com/Felix-Vita/auth-service.git
+[submodule "loan-applications-service"]
+	path = loan-applications-service
+	url = https://github.com/Felix-Vita/loan-applications-service.git
+	branch = main
