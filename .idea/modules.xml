@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/applications/app-service/AuthService.app-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/applications/app-service/AuthService.app-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/applications/app-service/AuthService.app-service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/applications/app-service/AuthService.app-service.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/model/AuthService.model.main.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/model/AuthService.model.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/model/AuthService.model.test.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/model/AuthService.model.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/infrastructure/driven-adapters/r2dbc-postgresql/AuthService.r2dbc-postgresql.main.iml" filepath="$PROJECT_DIR$/.idea/modules/infrastructure/driven-adapters/r2dbc-postgresql/AuthService.r2dbc-postgresql.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/infrastructure/driven-adapters/r2dbc-postgresql/AuthService.r2dbc-postgresql.test.iml" filepath="$PROJECT_DIR$/.idea/modules/infrastructure/driven-adapters/r2dbc-postgresql/AuthService.r2dbc-postgresql.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/infrastructure/entry-points/reactive-web/AuthService.reactive-web.main.iml" filepath="$PROJECT_DIR$/.idea/modules/infrastructure/entry-points/reactive-web/AuthService.reactive-web.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/infrastructure/entry-points/reactive-web/AuthService.reactive-web.test.iml" filepath="$PROJECT_DIR$/.idea/modules/infrastructure/entry-points/reactive-web/AuthService.reactive-web.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/infrastructure/driven-adapters/security/AuthService.security.main.iml" filepath="$PROJECT_DIR$/.idea/modules/infrastructure/driven-adapters/security/AuthService.security.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/usecase/AuthService.usecase.main.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/usecase/AuthService.usecase.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/usecase/AuthService.usecase.test.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/usecase/AuthService.usecase.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/CrediYa.iml" filepath="$PROJECT_DIR$/.idea/CrediYa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/applications/app-service/LoanApplicationsService.app-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/applications/app-service/LoanApplicationsService.app-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/model/LoanApplicationsService.model.main.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/model/LoanApplicationsService.model.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/model/LoanApplicationsService.model.test.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/model/LoanApplicationsService.model.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/infrastructure/driven-adapters/r2dbc-postgresql/LoanApplicationsService.r2dbc-postgresql.main.iml" filepath="$PROJECT_DIR$/.idea/modules/infrastructure/driven-adapters/r2dbc-postgresql/LoanApplicationsService.r2dbc-postgresql.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/infrastructure/entry-points/reactive-web/LoanApplicationsService.reactive-web.main.iml" filepath="$PROJECT_DIR$/.idea/modules/infrastructure/entry-points/reactive-web/LoanApplicationsService.reactive-web.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/infrastructure/driven-adapters/rest-consumer/LoanApplicationsService.rest-consumer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/infrastructure/driven-adapters/rest-consumer/LoanApplicationsService.rest-consumer.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/infrastructure/driven-adapters/security/LoanApplicationsService.security.main.iml" filepath="$PROJECT_DIR$/.idea/modules/infrastructure/driven-adapters/security/LoanApplicationsService.security.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/usecase/LoanApplicationsService.usecase.main.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/usecase/LoanApplicationsService.usecase.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/usecase/LoanApplicationsService.usecase.test.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/usecase/LoanApplicationsService.usecase.test.iml" />
+    </modules>
+  </component>
+</project>
