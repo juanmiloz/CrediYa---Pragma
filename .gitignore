@@ -1,0 +1,34 @@
+# --- SO / IDE ---
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+out/
+
+# --- Java / Gradle / Maven ---
+build/
+target/
+.gradle/
+*.log
+*.pid
+hs_err_pid*
+replay_pid*
+
+# --- Node (por si tienes front) ---
+node_modules/
+dist/
+
+# --- Docker / envs (no subir secretos) ---
+.env
+.env.*
+!*.env.example
+
+# --- Postgres: volúmenes de datos (mantén los init scripts) ---
+deployment/data/
+!deployment/init/**
+
+# --- Otros temporales ---
+**/tmp/

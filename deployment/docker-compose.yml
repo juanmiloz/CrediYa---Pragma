@@ -5,26 +5,85 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_DB: auth_db
-      POSTGRES_USER: auth_be_user
-      POSTGRES_PASSWORD: LaNtrYSOctIsMycionAlPTiCKEYema
+      POSTGRES_DB: ${POSTGRES_AUTH_DB}
+      POSTGRES_USER: ${POSTGRES_AUTH_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_AUTH_PASSWORD}
     volumes:
       - ./data/auth:/var/lib/postgresql/data
       - ./init/auth:/docker-entrypoint-initdb.d:ro
     networks:
       - pragma-network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_AUTH_USER} -d ${POSTGRES_AUTH_DB} || exit 1" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
   loan_application_db:
     image: postgres:latest
     container_name: loan_applications_db
     ports:
       - "5433:5432"
     environment:
-      POSTGRES_DB: applications_db
-      POSTGRES_USER: application_be_user
-      POSTGRES_PASSWORD: sTRuDYSPEADrECTfuLTarGoNdIFIch
+      POSTGRES_DB: ${POSTGRES_LOAN_DB}
+      POSTGRES_USER: ${POSTGRES_LOAN_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_LOAN_PASSWORD}
     volumes:
       - ./data/loan:/var/lib/postgresql/data
       - ./init/loan:/docker-entrypoint-initdb.d:ro
+    networks:
+      - pragma-network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_LOAN_USER} -d ${POSTGRES_LOAN_DB} || exit 1" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+  auth_service:
+    build:
+      context: ../auth-service
+      dockerfile: ./deployment/Dockerfile
+    container_name: auth_api
+    environment:
+      SPRING_DATASOURCE_HOST: ${POSTGRES_AUTH_DB}
+      SPRING_DATASOURCE_PORT: ${AUTH_DB_PORT}
+      SPRING_DATASOURCE_DATABASE: ${POSTGRES_AUTH_DB}
+      SPRING_DATASOURCE_SCHEMA: auth
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_AUTH_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_AUTH_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_EXPIRATION: ${JWT_EXPIRATION}
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE}
+    ports:
+      - "8001:8001"
+    depends_on:
+      auth_db:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - pragma-network
+  loan_service:
+    build:
+      context: ../loan-applications-service
+      dockerfile: ./deployment/Dockerfile
+    container_name: loan_app_api
+    environment:
+      SPRING_DATASOURCE_HOST: ${LOAN_DB_HOST}
+      SPRING_DATASOURCE_PORT: ${LOAN_DB_PORT}
+      SPRING_DATASOURCE_DATABASE: ${POSTGRES_LOAN_DB}
+      SPRING_DATASOURCE_SCHEMA: loan
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_LOAN_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_LOAN_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_EXPIRATION: ${JWT_EXPIRATION}
+      REST_CONSUMER_AUTH: http://auth_service:8001
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE}
+    ports:
+      - "8002:8002"
+    depends_on:
+      loan_application_db:
+        condition: service_healthy
+    restart: unless-stopped
     networks:
       - pragma-network
 networks:
