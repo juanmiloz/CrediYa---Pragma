@@ -17,10 +17,6 @@ target/
 hs_err_pid*
 replay_pid*
 
-# --- Node (por si tienes front) ---
-node_modules/
-dist/
-
 # --- Docker / envs (no subir secretos) ---
 .env
 .env.*
