@@ -16,11 +16,11 @@ CREATE TABLE IF NOT EXISTS auth.users
     first_name  TEXT        NOT NULL,
     last_name   TEXT        NOT NULL,
     email       CITEXT      NOT NULL UNIQUE,
-    national_id TEXT UNIQUE,
+    id TEXT UNIQUE,
     phone       TEXT,
-    role_id     UUID        REFERENCES auth.roles (role_id)
-                                ON UPDATE RESTRICT ON DELETE SET NULL,
+    role_id     UUID        REFERENCES auth.roles (role_id) ON UPDATE RESTRICT ON DELETE SET NULL,
     base_salary NUMERIC(14, 2) CHECK (base_salary IS NULL OR base_salary >= 0),
+    password    VARCHAR(255) NOT NULL,
     created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
