@@ -4,3 +4,7 @@
 [submodule "loan-applications-service"]
 	path = loan-applications-service
 	url = https://github.com/Felix-Vita/loan-applications-service.git
+[submodule "report-service"]
+	path = report-service
+	url = https://github.com/juanmiloz/report-service.git
+	branch = main
